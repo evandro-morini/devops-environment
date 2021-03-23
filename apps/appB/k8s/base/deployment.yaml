@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-app-b
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: devops-app-b
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  minReadySeconds: 5
+  template:
+    metadata:
+      labels:
+        app: devops-app-b
+    spec:
+      containers:
+      - name: devops-app-b
+        imagePullPolicy: Always
+        image: evandromorini/devops-app-b:latest
+        command: ["python", "run.py"]
+        resources:
+          requests:
+            cpu: "10m"
+            memory: "64Mi"
+          limits:
+            cpu: "50m"
+            memory: "128Mi"
+        envFrom:
+        - configMapRef:
+            name: devops-app-b-config
+        - secretRef:
+            name: devops-app-b-secret

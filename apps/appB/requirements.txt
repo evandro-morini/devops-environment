@@ -1,0 +1,8 @@
+Flask
+python-dotenv
+Flask-SQLAlchemy
+marshmallow-sqlalchemy
+flask_marshmallow
+marshmallow
+mysqlclient
+SQLAlchemy<1.4

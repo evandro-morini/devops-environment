@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: devops-app-b
+spec:
+  selector:
+    app: devops-app-b
+  type: NodePort
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 5000

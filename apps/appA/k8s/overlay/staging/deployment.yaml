@@ -1,0 +1,15 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-app-a
+spec:
+  replicas: 2
+  template:
+    spec:
+      $setElementOrder/containers:
+      - name: devops-app-a
+      containers:
+      - name: devops-app-a
+        resources:
+          requests:
+            cpu: "20m"
