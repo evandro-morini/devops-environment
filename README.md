@@ -1,4 +1,4 @@
-# DevOps Challenge
+# DevOps Environment
 
 ### Terraform
 O primeiro passo foi pensar na construção do cluster k8s que irá abrigar as duas aplicações. Optei por utilizar o Google Cloud e trabalhar com o Kubernetes Nativo (GKE). Como não estamos abordando questões de VPC, Peering e possíveis overlaps de IP's, optei por utilizar uma rede VPC Default criada pelo próprio Google.
